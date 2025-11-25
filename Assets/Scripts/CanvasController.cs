@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text moneyDisplay;
+    [SerializeField] private TMP_Text citizenDisplay;
     public static CanvasController instance;
 
     private void Awake()
@@ -17,7 +18,6 @@ public class CanvasController : MonoBehaviour
 
     void Start()
     {
-        // Feel free to remove the following!
         if (GetComponent<CanvasScaler>().uiScaleMode == CanvasScaler.ScaleMode.ConstantPixelSize)
             Debug.LogWarning($"{gameObject.name} is currently set to 'Constant Pixel Size', this is usually undesired!");
         if (FindAnyObjectByType<EventSystem>() == null)
@@ -27,7 +27,8 @@ public class CanvasController : MonoBehaviour
 
     private void Update()
     {
-        if (moneyDisplay != null) moneyDisplay.text = $"$ {GameController.instance.money}";
+        if (moneyDisplay != null) moneyDisplay.text = $"$ {GameController.Instance.money}";
+        if (citizenDisplay != null) citizenDisplay.text = $"Citizens: {GameController.Instance.citizens}";
     }
 
     /// <summary>

@@ -1,11 +1,13 @@
-using UnityEditor.Rendering.Canvas.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(MeshCollider))]
 public class Building : MonoBehaviour
 {
     public string label = "Unnamed Building";
     [TextArea] public string description = "Description Missing!";
+
+    public Mesh[] levels;
 
     public int level = 1;
     public float value = 100;
@@ -13,6 +15,7 @@ public class Building : MonoBehaviour
     protected virtual void OnStart()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
+        GameController.Instance.newDayEvent.AddListener(NewDay);
     }
     private void Start()
     {
@@ -28,14 +31,25 @@ public class Building : MonoBehaviour
     {
         level++;
         value = Mathf.Ceil(value * 1.4f);
+
+        if (level >= levels.Length) return;
+        GetComponent<MeshFilter>().mesh = levels[level];
+
+        GetComponent<MeshCollider>().sharedMesh = null;
+        GetComponent<MeshCollider>().sharedMesh = GetComponent<MeshFilter>().mesh;
     }
 
     public virtual void Sell()
     {
-        GameController.instance.AddMoney(value);
+        GameController.Instance.AddMoney(value);
+        GameController.Instance.newDayEvent.RemoveListener(NewDay);
         Destroy(gameObject);
     }
 
+    protected virtual void NewDay()
+    {
+
+    }
     private void OnMouseOver()
     {
         if (attackAction.WasPressedThisFrame()) CanvasController.instance.InstantiateMenu("BuildingMenu").GetComponent<BuildingMenu>().building = this;

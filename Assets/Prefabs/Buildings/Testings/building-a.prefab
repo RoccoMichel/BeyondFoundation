@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1319789488962769195, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
     - target: {fileID: 919132149155446097, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
       propertyPath: m_Name
       value: building-a
@@ -58,17 +66,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 4027342474323936838}
+      addedObject: {fileID: 7606908937270348230}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 3416737388369053362}
+      addedObject: {fileID: 9173893761064783982}
   m_SourcePrefab: {fileID: 100100000, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
 --- !u!1 &8103996117768624430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}
   m_PrefabInstance: {fileID: 8986445258203292799}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4027342474323936838
+--- !u!114 &7606908937270348230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,15 +85,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8103996117768624430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4371f3d09a50774f9118842ba6f7913, type: 3}
+  m_Script: {fileID: 11500000, guid: da8d493d1b43c944c995c09014714401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Building A
+  label: Big Industry
   description: Description Missing!
+  levels: []
   level: 1
   value: 100
---- !u!65 &3416737388369053362
-BoxCollider:
+  baseIncome: 100
+--- !u!64 &9173893761064783982
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,6 +112,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 2.0835881, y: 1.3001405, z: 1.2420002}
-  m_Center: {x: -0.0007276535, y: 0.65007025, z: -0.000000059604645}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1319789488962769195, guid: d14ab8a1d1e6ed54bb184ccfab6a3b18, type: 3}

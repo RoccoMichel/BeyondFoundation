@@ -45,3 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  money: 1000
+  citizens: 0
+  newDayEvent:
+    m_PersistentCalls:
+      m_Calls: []
