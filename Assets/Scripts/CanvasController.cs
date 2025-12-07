@@ -9,11 +9,19 @@ public class CanvasController : MonoBehaviour
     [Header("References")]
     [SerializeField] private TMP_Text moneyDisplay;
     [SerializeField] private TMP_Text citizenDisplay;
-    public static CanvasController instance;
+    [SerializeField] private Slider dayProgress;
+
+    private GameObject currentMenu;
+
+    public static CanvasController Instance { get; private set; }
 
     private void Awake()
     {
-        instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else Destroy(gameObject);
     }
 
     void Start()
@@ -22,6 +30,8 @@ public class CanvasController : MonoBehaviour
             Debug.LogWarning($"{gameObject.name} is currently set to 'Constant Pixel Size', this is usually undesired!");
         if (FindAnyObjectByType<EventSystem>() == null)
             Debug.LogWarning("No Event System in Scene!");
+
+        GameController.Instance.newDayEvent.AddListener(NewDay);
     }
 
 
@@ -29,6 +39,7 @@ public class CanvasController : MonoBehaviour
     {
         if (moneyDisplay != null) moneyDisplay.text = $"$ {GameController.Instance.money}";
         if (citizenDisplay != null) citizenDisplay.text = $"Citizens: {GameController.Instance.citizens}";
+        if (dayProgress != null) dayProgress.value = Mathf.InverseLerp(0, GameController.Instance.dayInterval, GameController.Instance.timer);
     }
 
     /// <summary>
@@ -37,7 +48,15 @@ public class CanvasController : MonoBehaviour
     /// <param name="resourceName">Prefab path within "Resources/UI/"</param>
     public GameObject InstantiateMenu(string resourceName)
     {
-        return Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);
+        if (currentMenu != null) Destroy(currentMenu);
+        currentMenu = Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);
+
+        return currentMenu;
+    }
+
+    private void NewDay()
+    {
+        Destroy(Instantiate((GameObject)Resources.Load($"UI/New Day"), transform), 2);
     }
 
     private void Reset()

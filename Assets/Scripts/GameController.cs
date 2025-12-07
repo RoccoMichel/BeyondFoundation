@@ -9,21 +9,27 @@ public class GameController : MonoBehaviour
     [Header("Game Statistics")]
     public float money;
     public int citizens;
+    public float dayInterval = 60;
+    internal float timer;
+
 
     [Header("References")]
     private GameObject newBuilding;
     public static GameController Instance { get; private set; }
     private InputAction debugAction;
     private InputAction attackAction;
-    [HideInInspector] public UnityEvent newDayEvent;
+    [HideInInspector] public UnityEvent newDayEvent = new();
 
-    private float timer;
-    private float dayInterval = 60;
+
 
     private void Awake()
     {
-        Instance = this;
-        newDayEvent = new();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
     }
 
     private void Start()

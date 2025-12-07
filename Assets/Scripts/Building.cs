@@ -52,6 +52,6 @@ public class Building : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (attackAction.WasPressedThisFrame()) CanvasController.instance.InstantiateMenu("BuildingMenu").GetComponent<BuildingMenu>().building = this;
+        if (attackAction.WasPressedThisFrame()) CanvasController.Instance.InstantiateMenu("BuildingMenu").GetComponent<BuildingMenu>().building = this;
     }
 }
