@@ -3,10 +3,10 @@ using UnityEngine;
 public class BuildingIndustry : Building
 {
     public float baseIncome = 100;
-    public Event profitEvent;
     public override void Upgrade()
     {
         base.Upgrade();
+        baseIncome += 100 * level;
     }
 
     protected override void NewDay()

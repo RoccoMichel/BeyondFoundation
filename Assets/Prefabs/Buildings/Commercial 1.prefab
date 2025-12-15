@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8705896173646600320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      propertyPath: m_Name
+      value: Commercial 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1098904803405146761}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8184570995737020490}
+  m_SourcePrefab: {fileID: 100100000, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+--- !u!1 &8363439183845287377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+  m_PrefabInstance: {fileID: 8705896173646600320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1098904803405146761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363439183845287377}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1319789488962769195, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+--- !u!114 &8184570995737020490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363439183845287377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7470740cd1665e47a6dae148098226f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Commercial Building
+  description: 'New Business for high profit '
+  levels:
+  - {fileID: 1319789488962769195, guid: eba85a75bc0ed124d8ec79c6f1f5e726, type: 3}
+  - {fileID: -2066283601509773235, guid: 97417a79a32407c41a65e7c147d14882, type: 3}
+  - {fileID: 2500970965421349609, guid: 6b7453ee99d8ad84b92eaf58dc616267, type: 3}
+  - {fileID: -2066283601509773235, guid: 97417a79a32407c41a65e7c147d14882, type: 3}
+  - {fileID: -7825783252185135, guid: da99fd4cf16e1f34f860d7fec855e365, type: 3}
+  - {fileID: -2843237350243111150, guid: 0f67247bcf7f81c4b93acd697e99cc84, type: 3}
+  - {fileID: 471836023069485021, guid: 75fda04c7301a954f92a274a11973ac6, type: 3}
+  - {fileID: 2864774077581168330, guid: 2a0edab2f1abca147b13e1650d6860d7, type: 3}
+  level: 1
+  value: 500

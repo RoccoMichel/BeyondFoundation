@@ -29,6 +29,10 @@ public class Building : MonoBehaviour
 
     public virtual void Upgrade()
     {
+        if (GameController.Instance.money < value) return;
+
+        GameController.Instance.RemoveMoney(value);
+
         level++;
         value = Mathf.Ceil(value * 1.4f);
 

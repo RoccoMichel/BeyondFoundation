@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (money > 100000 && citizens > 1000) Win();
+
         if (debugAction.WasPressedThisFrame()) debug = !debug;
 
         timer += Time.deltaTime;
@@ -65,6 +67,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Win() => SceneManager.LoadScene(1);
     public void AddMoney(float amount)
     {
         money += amount;
